@@ -11,24 +11,21 @@ using GameProject1.Collisions;
 namespace FinalProject
 {
     /// <summary>
-    /// a class representing a car
+    /// A class representing a truck
     /// </summary>
-    public class Car
+    public class Truck
     {
-        // the game this car is a part of
+        // the game this truck is a part of
         private Game _game;
 
-        // the texture atlas for the car sprite
+        // the texture atlas for the truck sprite
         private Texture2D _texture;
 
-        // the bounds of the car within the texture atlas
-        private Rectangle _carBounds = new Rectangle(912, 75, 23, 51);
+        // the bounds of the truck within the texture atlas
+        private Rectangle _carBounds = new Rectangle(0, 0, 56, 125);
 
-        // the position of the car
+        // the position of the truck
         private Vector2 _position;
-
-        // the color of the car
-        private Color _color;
 
         // whether the crash is over
         private bool _crashed = false;
@@ -41,7 +38,7 @@ namespace FinalProject
         public BoundingRectangle Bounds => _bounds;
 
         /// <summary>
-        /// whether this car crashed
+        /// whether this truck crashed
         /// </summary>
         public bool Crash = false;
 
@@ -51,19 +48,18 @@ namespace FinalProject
         public bool CrashHasOccured = false;
 
         /// <summary>
-        /// creates a new car sprite
+        /// creates a new truck sprite
         /// </summary>
         /// <param name="position">the position of the sprite in the game</param>
-        public Car(Game game, Vector2 position, Color color)
+        public Truck(Game game, Vector2 position)
         {
             _game = game;
             _position = position;
-            _color = color;
-            _bounds = new BoundingRectangle(_position, 23, 51);
+            _bounds = new BoundingRectangle(_position, 56, 125);
         }
 
         /// <summary>
-        /// loads the car texture atlas
+        /// loads the truck texture atlas
         /// </summary>
         /// <param name="content">the content manager used to load the content</param>
         public void LoadContent(ContentManager content)
@@ -72,7 +68,7 @@ namespace FinalProject
         }
 
         /// <summary>
-        /// updates the car
+        /// updates the truck
         /// </summary>
         /// <param name="gameTime">an object representing time in the game</param>
         public void Update(GameTime gameTime)
@@ -89,7 +85,7 @@ namespace FinalProject
                         if (_position.Y > 650)
                         {
                             Random rand = new Random();
-                            _position = new Vector2((float)rand.NextDouble() * _game.GraphicsDevice.Viewport.Width - 12, -360);
+                            _position = new Vector2((float)rand.NextDouble() * _game.GraphicsDevice.Viewport.Width - 17, -360);
                         }
                     }
                     else
@@ -110,13 +106,13 @@ namespace FinalProject
         }
 
         /// <summary>
-        /// draws the car sprite
+        /// draws the truck sprite
         /// </summary>
         /// <param name="gameTime">an object representing time in the game</param>
-        /// <param name="spriteBatch">the sprite batch to draw the car with</param>
+        /// <param name="spriteBatch">the sprite batch to draw the truck with</param>
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(_texture, _position, _carBounds, _color);
+            spriteBatch.Draw(_texture, _position, _carBounds, Color.White);
         }
     }
 }

@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Content;
 using GameProject1.Collisions;
 
-namespace GameProject3
+namespace FinalProject
 {
     /// <summary>
     /// a class representing the player's car
@@ -15,7 +15,7 @@ namespace GameProject3
     public class Player
     {
         // the game this car is a part of
-        private Game _game;
+        private Microsoft.Xna.Framework.Game _game;
 
         // the texture atlas for the car sprite
         private Texture2D _texture;
@@ -47,7 +47,7 @@ namespace GameProject3
         /// creates a new player sprite
         /// </summary>
         /// <param name="game">the game this player is a part of</param>
-        public Player(Game game)
+        public Player(Microsoft.Xna.Framework.Game game)
         {
             _game = game;
         }

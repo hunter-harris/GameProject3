@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 
-namespace GameProject3
+namespace FinalProject
 {
     /// <summary>
     /// A class representing a generic particle system
@@ -101,7 +101,7 @@ namespace GameProject3
         /// Constructs a new instance of a particle system
         /// </summary>
         /// <param name="game"></param>
-        public ParticleSystem(Game game, int maxParticles) : base(game) 
+        public ParticleSystem(Microsoft.Xna.Framework.Game game, int maxParticles) : base(game) 
         {
             // Create our particles
             particles = new Particle[maxParticles];

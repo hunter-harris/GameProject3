@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FinalProject;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace GameProject3
+namespace FinalProject
 {
     public class ExplosionParticleSystem : ParticleSystem
     {
-        public ExplosionParticleSystem(Game game, int maxExplosions) : base(game, maxExplosions * 25) { }
+        public ExplosionParticleSystem(Microsoft.Xna.Framework.Game game, int maxExplosions) : base(game, maxExplosions * 25) { }
 
         protected override void InitializeConstants()
         {
